@@ -1,12 +1,13 @@
 spring:
+  application:
+    name: api
+
   datasource:
     url: jdbc:postgresql://localhost:5432/ibmbank_api
     username: postgres
     password: Th@bata2012
   jpa:
+    database: POSTGRESQL
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
