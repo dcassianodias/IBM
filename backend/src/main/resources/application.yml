@@ -1,9 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/nome_do_banco
-    username: usuario
-    password: senha
+    url: jdbc:postgresql://localhost:5432/ibmbank_api
+    username: postgres
+    password: Th@bata2012
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
