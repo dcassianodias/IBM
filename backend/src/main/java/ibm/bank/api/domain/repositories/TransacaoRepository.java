@@ -1,6 +1,6 @@
-package repositories;
+package ibm.bank.api.domain.repositories;
 
-import entities.Transacao;
+import ibm.bank.api.domain.entities.Transacao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

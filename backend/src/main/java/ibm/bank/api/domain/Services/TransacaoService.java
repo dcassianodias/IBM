@@ -1,13 +1,15 @@
-package Services;
+package ibm.bank.api.domain.Services;
 
-import entities.Transacao;
+import ibm.bank.api.domain.repositories.TransacaoRepository;
+import ibm.bank.api.domain.entities.Transacao;
 import org.springframework.beans.factory.annotation.Autowired;
-import repositories.TransacaoRepository;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Service
 public class TransacaoService {
 
     @Autowired
@@ -25,11 +27,11 @@ public class TransacaoService {
         List<Transacao> transacoes = getTransacoesByCliente(clienteId);
         AtomicReference<BigDecimal> saldo = new AtomicReference<>(BigDecimal.ZERO);
 
-        transacoes.forEach(t-> {
-            if ("CREDITO".equals(t.getTipo())){
-                saldo.updateAndGet(v-> v.add(t.getValor()));
+        transacoes.forEach(t -> {
+            if ("CREDITO".equals(t.getTipo())) {
+                saldo.updateAndGet(v -> v.add(t.getValor()));
             } else if ("DEBITO".equals(t.getTipo())) {
-                saldo.updateAndGet(v-> v.subtract(t.getValor()));
+                saldo.updateAndGet(v -> v.subtract(t.getValor()));
             }
         });
 

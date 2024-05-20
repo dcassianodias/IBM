@@ -1,4 +1,4 @@
-package entities;
+package ibm.bank.api.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
