@@ -1,9 +1,9 @@
-package Services;
+package ibm.bank.api.domain.Services;
 
-import entities.Cliente;
+import ibm.bank.api.domain.repositories.ClienteRepository;
+import ibm.bank.api.domain.entities.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.ClienteRepository;
 
 import java.util.List;
 
@@ -14,8 +14,11 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     public Cliente saveCliente(Cliente cliente) {
-
         return clienteRepository.save(cliente);
+    }
+
+    public Cliente getClienteById(Long id) {
+        return clienteRepository.findById(id).orElse(null);
     }
 
     public List<Cliente> getAllClientes() {
