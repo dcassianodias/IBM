@@ -1,7 +1,7 @@
-package controllers;
+package ibm.bank.api.controllers;
 
-import Services.ClienteService;
-import entities.Cliente;
+import ibm.bank.api.domain.Services.ClienteService;
+import ibm.bank.api.domain.entities.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +19,14 @@ public class ClienteController {
         return clienteService.saveCliente(cliente);
     }
 
+    @GetMapping("/{id}")
+    public Cliente getCliente(@PathVariable Long id) {
+        return clienteService.getClienteById(id);
+    }
+
     @GetMapping
     public List<Cliente> getAllClientes() {
         return clienteService.getAllClientes();
     }
 }
+
