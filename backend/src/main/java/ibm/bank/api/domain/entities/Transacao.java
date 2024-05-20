@@ -1,4 +1,4 @@
-package entities;
+package ibm.bank.api.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package controllers;
+package ibm.bank.api.controllers;
 
-import Services.TransacaoService;
-import entities.Transacao;
+import ibm.bank.api.domain.Services.TransacaoService;
+import ibm.bank.api.domain.entities.Transacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +27,6 @@ public class TransacaoController {
 
     @GetMapping("/saldo/{clienteId}")
     public BigDecimal getSaldoTotal(@PathVariable Long clienteId) {
-
         return transacaoService.getSaldoTotal(clienteId);
     }
 }
