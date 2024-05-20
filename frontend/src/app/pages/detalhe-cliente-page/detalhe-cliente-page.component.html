@@ -1,0 +1,10 @@
+<app-transacao-form
+  [clienteId]="clienteId"
+  (transacaoConcluidaEmmitter)="buscarSaldo()"
+></app-transacao-form>
+
+<app-transacao-table
+  [transacoes]="(transacoes$ | async) || []"
+></app-transacao-table>
+
+<p>Total saldo: {{ saldo$ | async }}</p>

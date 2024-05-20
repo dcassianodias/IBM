@@ -1,0 +1,26 @@
+<form [formGroup]="formControl">
+  <mat-card>
+    <mat-card-header class="mb-2">
+      <h2 class="text-lg font-bold">Adicionar Nova Transação</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Tipo transação</mat-label>
+        <mat-select formControlName="tipo">
+          <mat-option [value]="tipoTransacaoEnum.CREDITO">Crédito</mat-option>
+          <mat-option [value]="tipoTransacaoEnum.DEBITO">Débito</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Valor</mat-label>
+        <input matInput formControlName="valor" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="flex gap-4 justify-center">
+      <button mat-raised-button (click)="clear()">Apagar</button>
+      <button mat-raised-button color="primary" (click)="addTransacao()">
+        Salvar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
