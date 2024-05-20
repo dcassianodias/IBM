@@ -1,0 +1,26 @@
+<div>
+    <h2>Clientes</h2>
+    <ul>
+      <li *ngFor="let cliente of clientes">
+        {{ cliente.nome }} ({{ cliente.idade }} anos) - {{ cliente.email }} - Conta: {{ cliente.numeroConta }}
+      </li>
+    </ul>
+  
+    <h2>Adicionar Novo Cliente</h2>
+    <form (ngSubmit)="addCliente()">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" [(ngModel)]="newCliente.nome" name="nome" required>
+      <br>
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" [(ngModel)]="newCliente.idade" name="idade" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="newCliente.email" name="email" required>
+      <br>
+      <label for="numeroConta">Número da Conta:</label>
+      <input type="text" id="numeroConta" [(ngModel)]="newCliente.numeroConta" name="numeroConta" required>
+      <br>
+      <button type="submit">Adicionar Cliente</button>
+    </form>
+  </div>
+  
