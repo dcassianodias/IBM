@@ -1,3 +1,8 @@
+<div class="flex justify-end">
+  <button mat-raised-button color="primary" routerLink="/clientes/adicionar">
+    Cadastrar um novo Cliente
+  </button>
+</div>
 <table mat-table [dataSource]="(clientes$ | async) || []">
   <ng-container matColumnDef="nome">
     <th mat-header-cell *matHeaderCellDef>Nome</th>

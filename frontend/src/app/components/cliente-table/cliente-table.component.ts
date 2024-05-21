@@ -23,5 +23,6 @@ export class ClienteTableComponent {
   clientes$ = this.clienteService.getClientes();
 
   displayedColumns = ['nome', 'email', 'idade', 'numeroConta', 'acoes'];
+
   constructor(private clienteService: ClienteService) {}
 }
