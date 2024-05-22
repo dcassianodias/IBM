@@ -1,10 +1,15 @@
 <app-transacao-form
   [clienteId]="clienteId"
-  (transacaoConcluidaEmmitter)="buscarSaldo()"
+  (transacaoConcluidaEmmitter)="buscarDados()"
 ></app-transacao-form>
+<div
+  class="w-full border border-neutral-3 border-solid rounded-lg overflow-hidden mt-4">
+  <app-transacao-table
+    [transacoes]="(transacoes$ | async) || []"
+  ></app-transacao-table>
 
-<app-transacao-table
-  [transacoes]="(transacoes$ | async) || []"
-></app-transacao-table>
-
-<p>Total saldo: {{ saldo$ | async }}</p>
+  <div class="flex justify-between font-bold">
+    <p>Total saldo:</p>
+    <p>{{saldo$ | async | currency: 'BRL'}}</p>
+  </div>
+</div>

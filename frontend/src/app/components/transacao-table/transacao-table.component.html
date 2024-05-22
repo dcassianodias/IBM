@@ -13,6 +13,7 @@
       [class.text-red-500]="element.tipo === 'DEBITO'"
       [class.text-green-500]="element.tipo === 'CREDITO'"
     >
+    <span *ngIf="element.tipo === 'DEBITO'"> - </span>
       {{ element.valor | currency : "BRL" }}
     </td>
   </ng-container>

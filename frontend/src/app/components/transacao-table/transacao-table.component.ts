@@ -26,6 +26,6 @@ import { Transacao } from '../../models/transacao';
 export class TransacaoTableComponent {
   @Input() transacoes: Transacao[] | null = [];
 
-  displayedColumns = ['nome', 'email', 'idade', 'numeroConta', 'acoes'];
+  displayedColumns = ['nome', 'valor'];
   constructor(private transacaoService: TransacaoService) {}
 }
